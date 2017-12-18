@@ -165,7 +165,7 @@ fun! TriggerSnippet()
 		endif
 	endif
 
-	if pumvisible() " Update snippet if completion is used, or deal with supertab
+	if pumvisible() || exists('b:supertab_completion_mode') " Update snippet if completion is used, or deal with supertab
 		if exists('SuperTabKey')
 			call feedkeys(SuperTabKey) | return ''
 		endif
